@@ -13,6 +13,12 @@ function App() {
     }
   };
 
+  const handleRemove = (e) => {
+    e.preventDefault();
+
+    
+  };
+
   return (
     <div className="App">
       <div className="container">
@@ -31,7 +37,9 @@ function App() {
                 {t.todo}
               </span>
               <button className="edit">EDIT</button>
-              <button className="remove" onClick={}>REMOVE</button>
+              <button className="remove" onClick={handleRemove}>
+                REMOVE
+              </button>
             </li>
           ))}
         </ul>
