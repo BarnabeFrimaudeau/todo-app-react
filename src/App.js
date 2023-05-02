@@ -8,15 +8,15 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (todo != "") {
+    if (todo !== "") {
       setTodos([{ id: `${todo}-${Date.now()}`, todo }, ...todos]);
     }
   };
 
-  const handleRemove = (e) => {
-    e.preventDefault();
+  const handleRemove = (id) => {
+    const newTodos = todos.filter((todo) => todo.id !== id);
 
-    
+    setTodos(newTodos);
   };
 
   return (
@@ -37,7 +37,7 @@ function App() {
                 {t.todo}
               </span>
               <button className="edit">EDIT</button>
-              <button className="remove" onClick={handleRemove}>
+              <button className="remove" onClick={() => handleRemove(t.id)}>
                 REMOVE
               </button>
             </li>
