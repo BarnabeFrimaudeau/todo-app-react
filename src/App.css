@@ -9,6 +9,7 @@
   background-color: #ffffff;
   color: rgb(0, 0, 0);
   font-family: 'Cabin', sans-serif;
+  background-color: #f0ead6;
 }
 
 h1, h2, h3 {
@@ -22,14 +23,14 @@ h1, h2, h3 {
   align-items: center;
   min-height: 60vh;
   margin-top: 10vh;
-  width: 400px;
+  width: 80vh;
   background-color: #ffffff;
   /* border: 1px solid #000000; */
   border-radius: 1vh;
   padding: 5vh;
   font-size: 20px;
   color: black;
-  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .todoForm {

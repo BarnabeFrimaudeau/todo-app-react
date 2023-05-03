@@ -22,14 +22,14 @@ function App() {
     setTodos(newTodos);
   };
 
-  const handleEdit = (id, key) => {
-    const text = todos.filter(todo.id);
+  const handleEdit = (id) => {
+    const text = document.getElementById(id);
     text.contentEditable = true;
     text.focus();
 
-    // text.onmouseleave = function () {
-      // text.contentEditable = false;
-    // };
+    text.onmouseleave = function () {
+      text.contentEditable = false;
+    };
   };
 
   return (
@@ -46,7 +46,7 @@ function App() {
         <ul className="allTodos">
           {todos.map((t) => (
             <li className="singleTodo">
-              <span className="todoText" id="editable" key={t.id}>
+              <span className="todoText" id={t.id} key={t.id}>
                 {t.todo}
               </span>
               <div>
