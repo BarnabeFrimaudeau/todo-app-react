@@ -11,6 +11,9 @@ function App() {
     if (todo !== "") {
       setTodos([{ id: `${todo}-${Date.now()}`, todo }, ...todos]);
     }
+
+    document.getElementById("todoForm").reset();
+    setTodo("");
   };
 
   const handleRemove = (id) => {
@@ -19,11 +22,21 @@ function App() {
     setTodos(newTodos);
   };
 
+  const handleEdit = (id, key) => {
+    const text = todos.filter(todo.id);
+    text.contentEditable = true;
+    text.focus();
+
+    // text.onmouseleave = function () {
+      // text.contentEditable = false;
+    // };
+  };
+
   return (
     <div className="App">
       <div className="container">
         <h1>Todo List App</h1>
-        <form className="todoForm" onSubmit={handleSubmit}>
+        <form id="todoForm" className="todoForm" onSubmit={handleSubmit}>
           <input type="text" onChange={(e) => setTodo(e.target.value)} />
           <button className="add" type="submit">
             ADD
@@ -33,13 +46,17 @@ function App() {
         <ul className="allTodos">
           {todos.map((t) => (
             <li className="singleTodo">
-              <span className="todoText" key={t.id}>
+              <span className="todoText" id="editable" key={t.id}>
                 {t.todo}
               </span>
-              <button className="edit">EDIT</button>
-              <button className="remove" onClick={() => handleRemove(t.id)}>
-                REMOVE
-              </button>
+              <div>
+                <button className="edit" onClick={() => handleEdit(t.id)}>
+                  EDIT
+                </button>
+                <button className="remove" onClick={() => handleRemove(t.id)}>
+                  REMOVE
+                </button>
+              </div>
             </li>
           ))}
         </ul>

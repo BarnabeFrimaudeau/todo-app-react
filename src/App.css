@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap');
 
 .App {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   background-color: #ffffff;
   color: rgb(0, 0, 0);
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Cabin', sans-serif;
 }
 
 h1, h2, h3 {
@@ -20,6 +21,7 @@ h1, h2, h3 {
   flex-direction: column;
   align-items: center;
   min-height: 60vh;
+  margin-top: 10vh;
   width: 400px;
   background-color: #ffffff;
   /* border: 1px solid #000000; */
@@ -40,7 +42,7 @@ input {
   width: 100%;
   padding: 1vh 1.5vh 1vh 1.5vh;
   margin-top: 5vh;
-  border: 1px solid #d1d1d1;
+  border: 1px solid #b0b0b0;
   border-right: none;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -61,20 +63,19 @@ button {
   border-bottom-right-radius: 0.5vh;
   background-color: #ffffff;
   color: #000000;
-  /* font-weight: 900; */
+  font-weight: 700;
   transition: 150ms;
   color: black;
   padding: 1vh;
   /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
 }
-
 button:hover {
   cursor: pointer;
   color: white;
 }
 
 .add {
-  border: 1px solid #d1d1d1;
+  border: 1px solid #b0b0b0;
   border-top-right-radius: 100vh;
   border-bottom-right-radius: 100vh;
   margin-top: 5vh;
@@ -88,7 +89,7 @@ button:hover {
 }
 
 .edit {
-  border: 1px solid #d1d1d1;
+  border: 1px solid #b0b0b0;
   border-right: none;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -101,7 +102,7 @@ button:hover {
 }
 
 .remove {
-  border: 1px solid #d1d1d1;
+  border: 1px solid #b0b0b0;
   /* background-color: rgb(101, 119, 131); */
 }
 .remove:hover {
@@ -129,6 +130,7 @@ button:hover {
   border: 1px solid #d1d1d1;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   display: flex;
+  justify-content: space-between;
   width: 100%;
   font-weight: 700;
   color: black;
@@ -141,4 +143,5 @@ button:hover {
 .todoText {
   /* Puts everything to the right, 0.5 would put it in the middle instead. */
   flex: 1;
+  max-width: 65%;
 }
