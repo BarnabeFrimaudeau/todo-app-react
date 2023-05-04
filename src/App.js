@@ -27,9 +27,9 @@ function App() {
     text.contentEditable = true;
     text.focus();
 
-    text.onmouseleave = function () {
-      text.contentEditable = false;
-    };
+    // text.onmouseleave = function () {
+    //   text.contentEditable = false;
+    // };
   };
 
   return (
