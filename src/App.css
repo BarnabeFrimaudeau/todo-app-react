@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap');
 
+html {
+  background-color: white;
+}
+
 .App {
   min-height: 100vh;
   display: flex;
@@ -9,7 +13,7 @@
   background-color: #ffffff;
   color: rgb(0, 0, 0);
   font-family: 'Cabin', sans-serif;
-  background-color: #f0ead6;
+  /* background-color: #f0ead6; */
 }
 
 h1, h2, h3 {
@@ -23,14 +27,14 @@ h1, h2, h3 {
   align-items: center;
   min-height: 60vh;
   margin-top: 10vh;
-  width: 80vh;
+  width: 700px;
   background-color: #ffffff;
   /* border: 1px solid #000000; */
   border-radius: 1vh;
-  padding: 5vh;
-  font-size: 20px;
+  padding: 7vw;
+  font-size: 25px;
   color: black;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
 }
 
 .todoForm {
@@ -39,11 +43,17 @@ h1, h2, h3 {
   width: 100%
 }
 
+.input-container {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+}
+
 input {
   width: 100%;
   padding: 1vh 1.5vh 1vh 1.5vh;
   margin-top: 5vh;
-  border: 1px solid #b0b0b0;
+  border: 3px solid #b0b0b0;
   border-right: none;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -63,9 +73,9 @@ button {
   border-top-right-radius: 0.5vh;
   border-bottom-right-radius: 0.5vh;
   background-color: #ffffff;
-  color: #000000;
+  font-size: 15px;
   font-weight: 700;
-  transition: 150ms;
+  transition: 125ms;
   color: black;
   padding: 1vh;
   /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
@@ -76,7 +86,7 @@ button:hover {
 }
 
 .add {
-  border: 1px solid #b0b0b0;
+  border: 3px solid #b0b0b0;
   border-top-right-radius: 100vh;
   border-bottom-right-radius: 100vh;
   margin-top: 5vh;
@@ -90,7 +100,7 @@ button:hover {
 }
 
 .edit {
-  border: 1px solid #b0b0b0;
+  border: 3px solid #b0b0b0;
   border-right: none;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -103,7 +113,7 @@ button:hover {
 }
 
 .remove {
-  border: 1px solid #b0b0b0;
+  border: 3px solid #b0b0b0;
   /* background-color: rgb(101, 119, 131); */
 }
 .remove:hover {

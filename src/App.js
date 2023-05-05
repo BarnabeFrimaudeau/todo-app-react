@@ -4,32 +4,40 @@ import "./App.css";
 function App() {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
+  const [editId, setEditId] = useState(0);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (todo !== "") {
-      setTodos([{ id: `${todo}-${Date.now()}`, todo }, ...todos]);
+    if (editId) {
+      const editTodo = todos.find((i) => i.id === editId);
+      const updatedTodos = todos.map((t) =>
+        t.id === editTodo.id
+          ? (t = { id: t.id, todo })
+          : { id: t.id, todo: t.todo }
+      );
+
+      setTodos(updatedTodos);
+      setEditId(0);
+      setTodo("");
+      return;
     }
 
-    document.getElementById("todoForm").reset();
-    setTodo("");
+    if (todo !== "") {
+      setTodos([{ id: `${todo}-${Date.now()}`, todo }, ...todos]);
+      setTodo("");
+    }
   };
 
   const handleRemove = (id) => {
-    const newTodos = todos.filter((todo) => todo.id !== id);
-
-    setTodos(newTodos);
+    const delTodo = todos.filter((to) => to.id !== id);
+    setTodos([...delTodo]);
   };
 
   const handleEdit = (id) => {
-    const text = document.getElementById(id);
-    text.contentEditable = true;
-    text.focus();
-
-    // text.onmouseleave = function () {
-    //   text.contentEditable = false;
-    // };
+    const editTodo = todos.find((i) => i.id === id);
+    setTodo(editTodo.todo);
+    setEditId(id);
   };
 
   return (
@@ -37,16 +45,22 @@ function App() {
       <div className="container">
         <h1>Todo List App</h1>
         <form id="todoForm" className="todoForm" onSubmit={handleSubmit}>
-          <input type="text" onChange={(e) => setTodo(e.target.value)} />
-          <button className="add" type="submit">
-            ADD
-          </button>
+          <div className="input-container">
+            <input
+              type="text"
+              value={todo}
+              onChange={(e) => setTodo(e.target.value)}
+            />
+            <button className="add" type="submit">
+              {editId ? "CONFIRM" : "ADD"}
+            </button>
+          </div>
         </form>
 
         <ul className="allTodos">
           {todos.map((t) => (
             <li className="singleTodo">
-              <span className="todoText" id={t.id} key={t.id}>
+              <span className="todoText" key={t.id}>
                 {t.todo}
               </span>
               <div>
